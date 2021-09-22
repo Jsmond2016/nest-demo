@@ -1,0 +1,32 @@
+
+
+POST http://localhost:3000/user/create HTTP/1.1
+content-type: application/json
+
+{
+  "name": "hihi~~",
+  "phone": "55667788"
+}
+
+### 
+GET http://localhost:3000/user/get-by-id?id=2
+### 
+GET http://localhost:3000/user/get-list?pageIndex=1&pageSize=20
+
+
+### 
+POST http://localhost:3000/user/delete HTTP/1.1
+content-type: application/json
+
+{
+  "id": 2
+}
+### 
+POST http://localhost:3000/user/update HTTP/1.1
+content-type: application/json
+
+{
+  "id": 3,
+  "name": "hihi~~",
+  "phone": "55667788"
+}
