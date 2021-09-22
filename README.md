@@ -5,6 +5,9 @@
 - [doc-nestjs](https://docs.nestjs.com/first-steps)
 - [doc-typeorm](https://docs.nestjs.cn/8/firststeps)
 
+参考教程：
+
+- [Exemplary real world backend API built with NestJS + TypeORM / Prisma](https://github.com/lujakob/nestjs-realworld-example-app)
 ## Description
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
