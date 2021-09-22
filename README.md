@@ -8,6 +8,20 @@
 参考教程：
 
 - [Exemplary real world backend API built with NestJS + TypeORM / Prisma](https://github.com/lujakob/nestjs-realworld-example-app)
+
+
+Plan：
+
+- [x] CRUD 操作数据库
+- [x] 接口参数校验
+- [ ] JWT 用户鉴权，接口鉴权
+- [ ] 安全处理
+- [ ] Excel 导入导出
+- [ ] File/png,jpg 单个、多个 文件上传
+- [ ] 测试用例
+- [ ] Docker 部署，区分 dev，test，prod 环境
+
+
 ## Description
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
