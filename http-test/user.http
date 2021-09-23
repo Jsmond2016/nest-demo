@@ -15,18 +15,25 @@ GET http://localhost:3000/user/get-list?pageIndex=1&pageSize=20
 
 
 ### 
-POST http://localhost:3000/user/delete HTTP/1.1
+DELETE  http://localhost:3000/user/delete HTTP/1.1
 content-type: application/json
 
 {
-  "id": 2
+  "id": 5
 }
 ### 
-POST http://localhost:3000/user/update HTTP/1.1
+DELETE  http://localhost:3000/user/batch-delete HTTP/1.1
 content-type: application/json
 
 {
-  "id": 3,
-  "name": "hihi~~",
+  "userIds": [1,4,5,6,7]
+}
+### 
+PUT http://localhost:3000/user/update HTTP/1.1
+content-type: application/json
+
+{
+  "id": 7,
+  "name": "hihiya~~",
   "phone": "55667788"
 }

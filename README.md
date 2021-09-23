@@ -9,18 +9,27 @@
 
 - [Exemplary real world backend API built with NestJS + TypeORM / Prisma](https://github.com/lujakob/nestjs-realworld-example-app)
 
-
 Plan：
 
-- [x] CRUD 操作数据库
+- [x] CRUD 基本操作
 - [x] 接口参数校验
+- [ ] ORM 操作数据库
 - [ ] JWT 用户鉴权，接口鉴权
 - [ ] 安全处理
 - [ ] Excel 导入导出
-- [ ] File/png,jpg 单个、多个 文件上传
+- [ ] 单个、多个 文件上传
 - [ ] 测试用例
+- [x] Swagger 接口文档
+- [ ] Log 日志
 - [ ] Docker 部署，区分 dev，test，prod 环境
 
+
+## 相关资料
+
+**swagger**
+- [@nestjs/swagger](https://github.com/nestjs/swagger)
+- [nestjs 使用swagger 搭建接口文档](https://blog.csdn.net/gwdgwd123/article/details/105412274)
+- [nest集成swagger](https://blog.csdn.net/weixin_44828005/article/details/116136244)
 
 ## Description
 
