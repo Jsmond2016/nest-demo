@@ -62,7 +62,7 @@ export class DeleteUserDto {
   readonly id: number;
 }
 export class BatchDeleteUserDto {
-  @ApiProperty({example: { userIds: [1 ,2]}, description: '必须是一个存在的用户id数组'})
+  @ApiProperty({ example: { userIds: [1 ,2]}, description: '必须是一个存在的用户id数组'})
   @ArrayNotEmpty({ message: 'id不能为空' })
   readonly userIds: number[];
 }

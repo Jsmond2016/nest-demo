@@ -92,7 +92,7 @@ export class UserController {
   }
 
   @ApiOperation({ summary: '批量删除用户', description: '批量删除用户' })
-  @ApiBody({ type: DeleteUserDto, description: '所有参数必传', isArray: true })
+  @ApiBody({ type: BatchDeleteUserDto, description: '所有参数必传' })
   @ApiResponse({
     status: 200,
     description: '',
@@ -100,7 +100,6 @@ export class UserController {
   @Delete("/batch-delete")
   async batchDelete(@Body() body: BatchDeleteUserDto) {
     const { userIds } = body;
-    console.log('userIds: ', userIds);
     if (Array.isArray(userIds) && userIds.length >0) {
      return this.userService.delete(userIds);
     } else {
