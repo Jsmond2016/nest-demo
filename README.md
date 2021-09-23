@@ -78,7 +78,21 @@ export class AppModule {}
 
 ### 配置数据库
 
+- 数据库定义
+- 表定义 & 关联关系
+- 字段定义
+
 ### CRUD操作
+
+> [ypeORM 中文文档](https://typeorm.biunav.com/zh/)
+
+
+- 增
+- 删
+- 查
+- 改
+- 连表查询
+
 
 ### 配置 `class-validator`
 

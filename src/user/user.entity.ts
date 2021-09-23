@@ -1,5 +1,12 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  OneToMany,
+  JoinColumn,
+} from 'typeorm';
 import { ApiProperty } from '@nestjs/swagger';
+import { Hobby } from 'src/hobby/hobby.entity';
 
 @Entity('user')
 export class User {
@@ -15,6 +22,7 @@ export class User {
   @Column({ default: '' })
   phone: string;
 
-  // @Column({ default: true })
-  // isActive: boolean;
+  @OneToMany(() => Hobby, (hobby) => hobby.users)
+  @JoinColumn()
+  hobby: Hobby;
 }

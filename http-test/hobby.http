@@ -1,0 +1,37 @@
+
+
+POST http://localhost:3000/hobby/create HTTP/1.1
+content-type: application/json
+
+{
+  "name": "跳舞"
+}
+
+### 
+GET http://localhost:3000/hobby/get-one?id=1
+### 
+GET http://localhost:3000/hobby/get-list?pageIndex=1&pageSize=20
+
+
+### 
+DELETE  http://localhost:3000/hobby/delete HTTP/1.1
+content-type: application/json
+
+{
+  "id": 5
+}
+### 
+DELETE  http://localhost:3000/hobby/batch-delete HTTP/1.1
+content-type: application/json
+
+{
+  "hobbyIds": [8]
+}
+### 
+PUT http://localhost:3000/hobby/update HTTP/1.1
+content-type: application/json
+
+{
+  "id": 2,
+  "name": "弹棉花"
+}

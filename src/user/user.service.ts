@@ -11,17 +11,18 @@ export class UserService {
     private usersRepository: Repository<User>,
   ) {}
 
-  save(user: User | Omit<User, 'id'>): Promise<User> {
+  save(user: User | Omit<User, 'id' | 'hobby'>): Promise<User> {
     console.log('user: ', user);
     return this.usersRepository.save(user);
   }
 
   getList(params: GetUserListDto): Promise<User[]> {
-    return this.usersRepository.find();
+    console.log('params: ', params);
+    return this.usersRepository.find({ relations: ['hobby'] });
   }
 
   getOne(id: number): Promise<User> {
-    return this.usersRepository.findOne(id);
+    return this.usersRepository.findOne(id, { relations: ['hobby'] });
   }
 
   async delete(id: number | number[]): Promise<void> {
