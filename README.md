@@ -1,20 +1,27 @@
 ## 笔记
 
+> 参考教程：[Exemplary real world backend API built with NestJS + TypeORM / Prisma](https://github.com/lujakob/nestjs-realworld-example-app)
+
+**相关资料：**
+
+- [Nest](https://github.com/nestjs/nest) 
 - [nestjs中文文档](https://docs.nestjs.cn/8/firststeps)
 - [typeorm 中文文档](https://typeorm.biunav.com/zh/#%E5%9C%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E6%9B%B4%E6%96%B0)
 - [doc-nestjs](https://docs.nestjs.com/first-steps)
 - [doc-typeorm](https://docs.nestjs.cn/8/firststeps)
 
-参考教程：
+**swagger**
+- [@nestjs/swagger](https://github.com/nestjs/swagger)
+- [nestjs 使用swagger 搭建接口文档](https://blog.csdn.net/gwdgwd123/article/details/105412274)
+- [nest集成swagger](https://blog.csdn.net/weixin_44828005/article/details/116136244)
 
-- [Exemplary real world backend API built with NestJS + TypeORM / Prisma](https://github.com/lujakob/nestjs-realworld-example-app)
-
-Plan：
+**项目计划：**
 
 - [x] CRUD 基本操作
 - [x] 接口参数校验
 - [ ] ORM 操作数据库
 - [ ] JWT 用户鉴权，接口鉴权
+- [ ] 中间件：错误捕获，接口返回格式统一化，登录验证鉴权，接口级权限点验证
 - [ ] 安全处理
 - [ ] Excel 导入导出
 - [ ] 单个、多个 文件上传
@@ -23,23 +30,61 @@ Plan：
 - [ ] Log 日志
 - [ ] Docker 部署，区分 dev，test，prod 环境
 
+## 项目搭建过程
 
-## 相关资料
+### 项目初始化
 
-**swagger**
-- [@nestjs/swagger](https://github.com/nestjs/swagger)
-- [nestjs 使用swagger 搭建接口文档](https://blog.csdn.net/gwdgwd123/article/details/105412274)
-- [nest集成swagger](https://blog.csdn.net/weixin_44828005/article/details/116136244)
-
-## Description
-
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Installation
+- 全局安装 `nest`，初始化项目：
 
 ```bash
-$ npm install
+npm i -g @nestjs/cli
+
+nest new nest-demo
 ```
+
+- 核心组成部分：
+  - module
+  - controller
+  - service
+  - dto
+  - entity
+- 创建模块：
+
+```bash
+nest g module user
+
+nest g controller user
+
+nest g service user
+```
+
+创建完成后，在 `app.module.ts` 导入新建的 `user.module.ts` ，代码如下：
+
+```typescript
+import { Module } from '@nestjs/common';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
+import { UserController } from './user/user.controller';
+import { UserService } from './user/user.service';
+import { UserModule } from './user/user.module';
+
+@Module({
+  imports: [UserModule],
+  controllers: [AppController],
+  providers: [AppService],
+})
+export class AppModule {}
+```
+
+### 配置数据库
+
+### CRUD操作
+
+### 配置 `class-validator`
+
+### 配置 swagger
+
+
 
 ## Running the app
 
@@ -67,16 +112,3 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).

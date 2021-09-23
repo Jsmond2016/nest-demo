@@ -2,15 +2,14 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Injectable } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { User } from './user.entity';
-import { GetUserListDto } from './dto'
+import { GetUserListDto } from './dto';
 
 @Injectable()
 export class UserService {
-
   constructor(
     @InjectRepository(User)
-    private usersRepository: Repository<User>
-  ){}
+    private usersRepository: Repository<User>,
+  ) {}
 
   save(user: User | Omit<User, 'id'>): Promise<User> {
     console.log('user: ', user);
