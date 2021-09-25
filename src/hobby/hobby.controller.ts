@@ -21,7 +21,7 @@ import {
 } from './dto';
 import { ApiTags } from '@nestjs/swagger';
 
-@ApiTags('hobby')
+@ApiTags('爱好模块')
 @Controller('/hobby')
 export class HobbyController {
   constructor(private readonly hobbyServise: HobbyService) {}

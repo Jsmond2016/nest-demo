@@ -11,11 +11,19 @@
 - [doc-typeorm](https://docs.nestjs.cn/8/firststeps)
 - [写给前端的 Nest.js 教程——10分钟上手后端接口开发](https://juejin.cn/post/6885751452015263758)
 
+**视频**
+
+- [基于TypeScript的NodeJs框架：NestJs开发博客API (node.js+nest.js)](https://www.bilibili.com/video/BV1U441117xK)
+- [Nodejs必学框架 | Nest企业级项目构建与开发实战](https://www.bilibili.com/video/BV1bQ4y1A77L)
+
 **swagger**
 - [@nestjs/swagger](https://github.com/nestjs/swagger)
 - [nestjs 使用swagger 搭建接口文档](https://blog.csdn.net/gwdgwd123/article/details/105412274)
 - [nest集成swagger](https://blog.csdn.net/weixin_44828005/article/details/116136244)
 
+**项目参考**
+- [基于Vue.js,Nest.js的前后端分离Blog|Based on Vue.js, Nest.js Separation | Blog](https://github.com/Dwsy/Blog)
+- [HeyiMaster/nest-starter](https://github.com/HeyiMaster/nest-starter)
 ## 项目计划
 
 - [x] CRUD 基本操作

@@ -4,12 +4,12 @@ POST http://localhost:3000/user/create HTTP/1.1
 content-type: application/json
 
 {
-  "name": "hihi~~",
+  "name": "hello",
   "phone": "55667788"
 }
 
 ### 
-GET http://localhost:3000/user/get-by-id?id=2
+GET http://localhost:3000/user/get-by-id?id=2&user=user
 ### 
 GET http://localhost:3000/user/get-list?pageIndex=1&pageSize=20
 
