@@ -1,3 +1,4 @@
+import { AuthGuard } from './../gards/auth.gard';
 import { UserService } from './user.service';
 import {
   Body,
@@ -9,6 +10,8 @@ import {
   HttpException,
   HttpStatus,
   Delete,
+  Inject,
+  UseGuards,
 } from '@nestjs/common';
 import {
   CreateUserDto,
@@ -27,12 +30,15 @@ import {
   ApiTags,
   ApiQuery,
 } from '@nestjs/swagger';
+import { Roles } from 'src/decorators/roles.decorator';
 
 @ApiBearerAuth()
-@ApiTags('user')
+@ApiTags('用户模块')
+@UseGuards(AuthGuard)
 @Controller('/user')
 export class UserController {
-  constructor(private readonly userService: UserService) {}
+  @Inject()
+  private readonly userService: UserService;
 
   @ApiOperation({ summary: '创建用户', description: '创建用户' })
   @ApiBody({ type: CreateUserDto, description: '所有参数必传' })
@@ -70,6 +76,7 @@ export class UserController {
     description: '',
     type: CreateUserResDto,
   })
+  @Roles('user')
   @Get('/get-by-id')
   async get(@Query() params: GetOneUserDto) {
     const { id } = params;
