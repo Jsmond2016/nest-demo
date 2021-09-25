@@ -9,7 +9,8 @@ import { HobbyModule } from './hobby/hobby.module';
 import { LoggerMiddleware } from './middleware/logger.middleware';
 import { EmailModule } from './email/email.module';
 import { MailerModule } from '@nest-modules/mailer';
-import { emailConfig } from './config';
+import { emailConfig, statusMonitorConfig } from './config';
+import { StatusMonitorModule } from 'nestjs-status-monitor';
 
 @Module({
   imports: [
@@ -25,6 +26,7 @@ import { emailConfig } from './config';
       },
       // inject: [ConfigService],
     }),
+    StatusMonitorModule.forRoot(statusMonitorConfig),
     UserModule,
     HobbyModule,
     EmailModule,
