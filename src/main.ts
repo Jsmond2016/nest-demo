@@ -2,9 +2,11 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { ValidationPipe } from '@nestjs/common';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
+import { formatResponseMiddleware } from './middleware/format-res.middleware';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  app.use(formatResponseMiddleware);
   app.useGlobalPipes(new ValidationPipe());
   const config = new DocumentBuilder()
     .setTitle('Cats example')

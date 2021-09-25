@@ -7,7 +7,9 @@ import {
   Post,
   Put,
   Query,
+  Req,
 } from '@nestjs/common';
+import { Request } from 'express';
 import { HobbyService } from './hobby.service';
 import {
   HobbyGetOneDto,
@@ -25,8 +27,10 @@ export class HobbyController {
   constructor(private readonly hobbyServise: HobbyService) {}
 
   @Get('/get-one')
-  getOne(@Query() params: HobbyGetOneDto) {
-    return this.hobbyServise.getOne(params);
+  async getOne(@Query() params: HobbyGetOneDto, @Req() req: Request) {
+    console.log('req: ', req.url);
+    const data = await this.hobbyServise.getOne(params);
+    return data;
   }
 
   @Get('/get-list')

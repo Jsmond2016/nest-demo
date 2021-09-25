@@ -16,8 +16,6 @@ export class AppModule implements NestModule {
   constructor(private readonly connection: Connection) {}
 
   configure(consumer: MiddlewareConsumer) {
-    consumer
-      .apply(LoggerMiddleware)
-      .forRoutes('user');
+    consumer.apply(LoggerMiddleware).forRoutes('user');
   }
 }
