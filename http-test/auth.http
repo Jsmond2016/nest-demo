@@ -1,0 +1,9 @@
+GET http://localhost:3000/auth/me
+Authorization: token "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MzI1NzkyNzAsImV4cCI6MTYzMjU3OTMzMH0.jGgTlKEtkYMk3-ZAkDH1uPUswfLmE1YpesBp8HFu3jU"
+###
+POST http://localhost:3000/auth/login
+
+{
+  "username": "walker123",
+  "password": "123321"
+}

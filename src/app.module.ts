@@ -11,6 +11,9 @@ import { EmailModule } from './email/email.module';
 import { MailerModule } from '@nest-modules/mailer';
 import { emailConfig, statusMonitorConfig } from './config';
 import { StatusMonitorModule } from 'nestjs-status-monitor';
+import { AuthModule } from './auth/auth.module';
+import { APP_FILTER, APP_GUARD } from '@nestjs/core';
+import { RoleAuthGuard } from './guards/role-auth.guard';
 
 @Module({
   imports: [
@@ -30,9 +33,16 @@ import { StatusMonitorModule } from 'nestjs-status-monitor';
     UserModule,
     HobbyModule,
     EmailModule,
+    AuthModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [
+    AppService,
+    // {
+    //   provide: APP_GUARD,
+    //   useClass: RoleAuthGuard,
+    // },
+  ],
 })
 export class AppModule implements NestModule {
   constructor(private readonly connection: Connection) {}

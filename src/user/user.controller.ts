@@ -1,4 +1,4 @@
-import { AuthGuard } from './../gards/auth.gard';
+import { AuthGuard } from '../guards/auth.guard';
 import { UserService } from './user.service';
 import {
   Body,
@@ -31,6 +31,7 @@ import {
   ApiQuery,
 } from '@nestjs/swagger';
 import { Roles } from 'src/decorators/roles.decorator';
+import { NoAuth } from 'src/decorators/no-auth.decorator';
 
 @ApiBearerAuth()
 @ApiTags('用户模块')
@@ -91,6 +92,7 @@ export class UserController {
     type: CreateUserResDto,
     isArray: true,
   })
+  @NoAuth()
   @Get('/get-list')
   getList(@Query() params: GetUserListDto) {
     return this.userService.getList(params);

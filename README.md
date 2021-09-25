@@ -24,6 +24,7 @@
 **项目参考**
 - [基于Vue.js,Nest.js的前后端分离Blog|Based on Vue.js, Nest.js Separation | Blog](https://github.com/Dwsy/Blog)
 - [HeyiMaster/nest-starter](https://github.com/HeyiMaster/nest-starter)
+- [nest starter project](https://github.com/HeyiMaster/nest-starter)
 ## 项目计划
 
 - [x] CRUD 基本操作
