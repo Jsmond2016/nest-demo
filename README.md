@@ -1,13 +1,12 @@
 ## 笔记
 
-> 参考教程：[Exemplary real world backend API built with NestJS + TypeORM / Prisma](https://github.com/lujakob/nestjs-realworld-example-app)
+> 参考教程：[Exemplary real world backend API built with NestJS + TypeORM / Prisma](https://github.com/lujakob/nestjs-realworld-example-app)，对应 [翻译](https://cnodejs.org/topic/60e669d4ba74606a00862e23)
 
 **相关资料：**
 
-- [Nest](https://github.com/nestjs/nest) 
+- [Nest官方文档](https://github.com/nestjs/nest) 
 - [nestjs中文文档](https://docs.nestjs.cn/8/firststeps)
 - [typeorm 中文文档](https://typeorm.biunav.com/zh/#%E5%9C%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E6%9B%B4%E6%96%B0)
-- [doc-nestjs](https://docs.nestjs.com/first-steps)
 - [doc-typeorm](https://docs.nestjs.cn/8/firststeps)
 - [写给前端的 Nest.js 教程——10分钟上手后端接口开发](https://juejin.cn/post/6885751452015263758)
 
@@ -30,12 +29,13 @@
 - [x] CRUD 基本操作
 - [x] 接口参数校验
 - [ ] ORM 操作数据库，事务处理
-- [ ] JWT 用户鉴权
-- [ ] 中间件
-  - [ ] 错误捕获
-  - [ ] 接口返回格式统一化
-  - [ ] 登录验证鉴权
+- [x] 过滤器
+- [ ] 路由守卫
+  - [x] JWT 用户鉴权
   - [ ] 接口级权限点验证
+- [ ] 中间件
+  - [x] 错误捕获，错误统一返回格式
+  - [ ] 正常接口返回格式统一化
 - [ ] 安全处理
 - [ ] Excel 导入导出
 - [ ] 单个、多个 文件上传
