@@ -2,18 +2,18 @@ import { Module, NestModule, MiddlewareConsumer } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { UserModule } from './user/user.module';
+import { UserModule } from './modules/user/user.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Connection } from 'typeorm';
-import { HobbyModule } from './hobby/hobby.module';
-import { LoggerMiddleware } from './middleware/logger.middleware';
-import { EmailModule } from './email/email.module';
+import { HobbyModule } from './modules/hobby/hobby.module';
+import { LoggerMiddleware } from './common/middleware/logger.middleware';
+import { EmailModule } from './modules/email/email.module';
 import { MailerModule } from '@nest-modules/mailer';
-import { emailConfig, statusMonitorConfig } from './config';
+import { emailConfig, statusMonitorConfig } from './common/config';
 import { StatusMonitorModule } from 'nestjs-status-monitor';
-import { AuthModule } from './auth/auth.module';
+import { AuthModule } from './modules/auth/auth.module';
 import { APP_FILTER, APP_GUARD } from '@nestjs/core';
-import { RoleAuthGuard } from './guards/role-auth.guard';
+// import { RoleAuthGuard } from '.common/guards/role-auth.guard';
 
 @Module({
   imports: [

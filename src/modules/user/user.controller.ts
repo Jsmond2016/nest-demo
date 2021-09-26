@@ -1,5 +1,3 @@
-import { AuthGuard } from '../guards/auth.guard';
-import { UserService } from './user.service';
 import {
   Body,
   Controller,
@@ -30,8 +28,10 @@ import {
   ApiTags,
   ApiQuery,
 } from '@nestjs/swagger';
-import { Roles } from 'src/decorators/roles.decorator';
-import { NoAuth } from 'src/decorators/no-auth.decorator';
+import { Roles } from 'src/common/decorators/roles.decorator';
+import { NoAuth } from 'src/common/decorators/no-auth.decorator';
+import { AuthGuard } from 'src/common/guards/auth.guard';
+import { UserService } from './user.service';
 
 @ApiBearerAuth()
 @ApiTags('用户模块')

@@ -6,7 +6,7 @@ import {
   ManyToOne,
 } from 'typeorm';
 import { ApiProperty } from '@nestjs/swagger';
-import { User } from 'src/user/user.entity';
+import { User } from '../user/user.entity';
 
 @Entity('hobby')
 export class Hobby {

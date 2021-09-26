@@ -1,4 +1,4 @@
-import { Hobby } from 'src/hobby/hobby.entity';
+import { Hobby } from '../hobby/hobby.entity';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
