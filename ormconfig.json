@@ -4,7 +4,7 @@
   "port": 3306,
   "username": "root",
   "password": "root",
-  "database": "test",
+  "database": "nest_test",
   "entities": ["dist/**/*.entity{.ts,.js}"],
   "synchronize": true
 }

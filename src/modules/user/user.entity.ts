@@ -3,26 +3,32 @@ import {
   Column,
   PrimaryGeneratedColumn,
   OneToMany,
-  JoinColumn,
+  CreateDateColumn,
+  UpdateDateColumn,
 } from 'typeorm';
 import { ApiProperty } from '@nestjs/swagger';
 import { Hobby } from '../hobby/hobby.entity';
 
 @Entity('user')
 export class User {
-  @ApiProperty({ example: 1, description: 'The age of the Cat' })
+  @ApiProperty({ example: 1, description: '唯一id' })
   @PrimaryGeneratedColumn()
-  id: string;
+  id: number;
 
-  @ApiProperty({ example: 'name', description: 'The age of the Cat' })
-  @Column({ default: '' })
+  @ApiProperty({ example: 'name', description: '用户名' })
+  @Column({ default: '', charset: 'utf8', comment: '用户名' })
   name: string;
 
-  @ApiProperty({ example: 13909098989, description: 'The age of the Cat' })
-  @Column({ default: '' })
+  @ApiProperty({ example: 13909098989, description: '用户电话' })
+  @Column({ default: '', length: 11, charset: 'utf8', comment: '用户电话' })
   phone: string;
 
-  @OneToMany(() => Hobby, (hobby) => hobby.users)
-  @JoinColumn()
-  hobby: Hobby;
+  // @CreateDateColumn()
+  // createdTime: Date;
+
+  // @UpdateDateColumn()
+  // updatedTime: Date;
+
+  @OneToMany(() => Hobby, (hobby) => hobby.user)
+  hobby: Hobby[];
 }

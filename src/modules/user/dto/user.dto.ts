@@ -1,5 +1,6 @@
-import { IsNotEmpty, Length, ArrayNotEmpty } from 'class-validator';
+import { IsNotEmpty, Length, ArrayNotEmpty, IsArray } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
+import { Hobby } from 'src/modules/hobby/hobby.entity';
 export class CreateUserDto {
   @ApiProperty({ example: '小明', description: '用户名' })
   @IsNotEmpty({ message: 'name不能为空' })
@@ -9,6 +10,9 @@ export class CreateUserDto {
   @IsNotEmpty({ message: 'phone不能为空' })
   @Length(6, 20, { message: 'phone长度不合法' })
   readonly phone: string;
+
+  @IsArray()
+  readonly hobby: Hobby[];
 }
 
 export class CreateUserResDto {

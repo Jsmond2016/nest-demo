@@ -2,8 +2,9 @@ import {
   Entity,
   Column,
   PrimaryGeneratedColumn,
-  JoinColumn,
   ManyToOne,
+  CreateDateColumn,
+  UpdateDateColumn,
 } from 'typeorm';
 import { ApiProperty } from '@nestjs/swagger';
 import { User } from '../user/user.entity';
@@ -15,10 +16,18 @@ export class Hobby {
   id: number;
 
   @ApiProperty({ example: 'name', description: 'hobby name' })
-  @Column({ default: '' })
+  @Column({ default: '', comment: '姓名' })
   name: string;
 
+  @Column({ default: null, comment: '用户id'})
+  userId: number;
+
+  // @CreateDateColumn()
+  // createdTime: Date;
+
+  // @UpdateDateColumn()
+  // updatedTime: Date;
+
   @ManyToOne(() => User, (user) => user.hobby)
-  @JoinColumn()
-  users: User[];
+  user: User;
 }
