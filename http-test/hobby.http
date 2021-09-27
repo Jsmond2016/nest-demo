@@ -4,8 +4,7 @@ POST http://localhost:3000/hobby/create HTTP/1.1
 content-type: application/json
 
 {
-  "name": "跳舞",
-  "userId": 1
+  "name": "跳舞"
 }
 
 ### 

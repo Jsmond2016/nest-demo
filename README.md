@@ -260,6 +260,31 @@ PUT http://www.nest.com/api/user/batch-delete?token=asdf
 - 连表
 - 事务
 
+- [nestjs中typeorm事务操作的三种方式](https://blog.csdn.net/kuangshp128/article/details/98179667)
+
+对 一个数据库多个表进行操作，当其中一个表操作失败的时候 ，能够全部回滚。
+
+```typescript
+async createMany(users: User[]) {
+  const queryRunner = this.connection.createQueryRunner();
+
+  await queryRunner.connect();
+  await queryRunner.startTransaction();
+  try {
+    await queryRunner.manager.save(users[0]);
+    await queryRunner.manager.save(users[1]);
+
+    await queryRunner.commitTransaction();
+  } catch (err) {
+    //如果遇到错误，可以回滚事务
+    await queryRunner.rollbackTransaction();
+  } finally {
+    //你需要手动实例化并部署一个queryRunner
+    await queryRunner.release();
+  }
+}
+
+```
 ### 配置 `class-validator`
 
 - 定义接口

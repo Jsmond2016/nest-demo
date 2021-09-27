@@ -14,6 +14,8 @@ import { StatusMonitorModule } from 'nestjs-status-monitor';
 import { AuthModule } from './modules/auth/auth.module';
 import { APP_FILTER, APP_GUARD } from '@nestjs/core';
 // import { RoleAuthGuard } from '.common/guards/role-auth.guard';
+import { ScheduleModule } from '@nestjs/schedule';
+import { TasksModule } from './tasks/tasks.module';
 
 @Module({
   imports: [
@@ -30,10 +32,12 @@ import { APP_FILTER, APP_GUARD } from '@nestjs/core';
       // inject: [ConfigService],
     }),
     StatusMonitorModule.forRoot(statusMonitorConfig),
+    ScheduleModule.forRoot(),
     UserModule,
     HobbyModule,
     EmailModule,
     AuthModule,
+    TasksModule,
   ],
   controllers: [AppController],
   providers: [
