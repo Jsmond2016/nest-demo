@@ -24,7 +24,7 @@ export class UserService {
     try {
       const { id } = await queryRunner.manager.save(User, userInfo);
       console.log('id: ', id);
-      const hobbies = hobby.map(h => ({...h, userId: id}))
+      const hobbies = hobby.map((h) => ({ ...h, userId: id }));
       console.log('hobbies: ', hobbies);
       await queryRunner.manager.save(Hobby, hobbies);
 

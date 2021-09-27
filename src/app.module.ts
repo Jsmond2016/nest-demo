@@ -9,13 +9,14 @@ import { HobbyModule } from './modules/hobby/hobby.module';
 import { LoggerMiddleware } from './common/middleware/logger.middleware';
 import { EmailModule } from './modules/email/email.module';
 import { MailerModule } from '@nest-modules/mailer';
-import { emailConfig, statusMonitorConfig } from './common/config';
+import { emailConfig, statusMonitorConfig } from './config';
 import { StatusMonitorModule } from 'nestjs-status-monitor';
 import { AuthModule } from './modules/auth/auth.module';
 import { APP_FILTER, APP_GUARD } from '@nestjs/core';
 // import { RoleAuthGuard } from '.common/guards/role-auth.guard';
 import { ScheduleModule } from '@nestjs/schedule';
 import { TasksModule } from './tasks/tasks.module';
+import { AudioModule } from './audio/audio.module';
 
 @Module({
   imports: [
@@ -38,6 +39,7 @@ import { TasksModule } from './tasks/tasks.module';
     EmailModule,
     AuthModule,
     TasksModule,
+    AudioModule,
   ],
   controllers: [AppController],
   providers: [

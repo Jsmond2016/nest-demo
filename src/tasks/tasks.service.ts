@@ -3,12 +3,12 @@ import { Cron, Interval, Timeout } from '@nestjs/schedule';
 
 /**
  * 定时任务的使用场景
- * 
+ *
  * 1-用户上传的视频，音频等大文件进行压缩处理
  * 2-定时清理磁盘的临时文件
- * 
- * 
- * 
+ *
+ *
+ *
  */
 
 @Injectable()

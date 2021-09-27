@@ -19,7 +19,7 @@ export class Hobby {
   @Column({ default: '', comment: '姓名' })
   name: string;
 
-  @Column({ default: null, comment: '用户id'})
+  @Column({ default: null, comment: '用户id' })
   userId: number;
 
   // @CreateDateColumn()
