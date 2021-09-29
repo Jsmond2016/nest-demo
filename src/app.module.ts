@@ -9,7 +9,7 @@ import { HobbyModule } from './modules/hobby/hobby.module';
 import { LoggerMiddleware } from './common/middleware/logger.middleware';
 import { EmailModule } from './modules/email/email.module';
 import { MailerModule } from '@nest-modules/mailer';
-import { emailConfig, statusMonitorConfig } from './config';
+import config from './config';
 import { StatusMonitorModule } from 'nestjs-status-monitor';
 import { AuthModule } from './modules/auth/auth.module';
 import { APP_FILTER, APP_GUARD } from '@nestjs/core';
@@ -17,33 +17,35 @@ import { APP_FILTER, APP_GUARD } from '@nestjs/core';
 import { ScheduleModule } from '@nestjs/schedule';
 import { TasksModule } from './tasks/tasks.module';
 import { AudioModule } from './audio/audio.module';
+import { AlbumModule } from './album/album.module';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
-      load: [() => ({ emailConfig })],
+      load: [config],
     }),
     TypeOrmModule.forRoot(),
     MailerModule.forRootAsync({
+      imports: [ConfigModule],
       useFactory: (config: ConfigService) => {
-        // console.log('config:=======>>>>>>>>> ', config);
-        // return config.get('emailConfig');
-        return emailConfig;
+        return config.get('emailConfig');
       },
-      // inject: [ConfigService],
+      inject: [ConfigService],
     }),
-    StatusMonitorModule.forRoot(statusMonitorConfig),
-    ScheduleModule.forRoot(),
+    StatusMonitorModule.forRoot(config().statusMonitorConfig),
+    // ScheduleModule.forRoot(),
     UserModule,
     HobbyModule,
     EmailModule,
     AuthModule,
-    TasksModule,
+    // TasksModule,
     AudioModule,
+    AlbumModule,
   ],
   controllers: [AppController],
   providers: [
     AppService,
+    ConfigService
     // {
     //   provide: APP_GUARD,
     //   useClass: RoleAuthGuard,

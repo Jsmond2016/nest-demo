@@ -1,5 +1,18 @@
 import * as path from 'path';
 import { PugAdapter } from '@nestjs-modules/mailer/dist/adapters/pug.adapter';
+import { join } from 'path';
+import { diskStorage } from 'multer';
+
+const file = {
+  root: join(__dirname, '../uploads'),
+  storage: diskStorage({
+    destination: join(__dirname, `../uploads/${new Date().toLocaleDateString()}`),
+    filename: (req, file, cb) => {
+      const filename = `${new Date().getTime()}.${file.mimetype.split('/')[1]}`;
+      return cb(null, filename);
+    },
+  }),
+};
 
 const emailConfig = {
   transport: 'smtps://305859189@qq.com:wphvqdmftyvzcabi@smtp.qq.com',
@@ -48,4 +61,4 @@ const statusMonitorConfig = {
   healthChecks: [],
 };
 
-export { emailConfig, statusMonitorConfig };
+export default () => ({ emailConfig, statusMonitorConfig, file })
