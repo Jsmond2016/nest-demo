@@ -9,15 +9,15 @@ import { HobbyModule } from './modules/hobby/hobby.module';
 import { LoggerMiddleware } from './common/middleware/logger.middleware';
 import { EmailModule } from './modules/email/email.module';
 import { MailerModule } from '@nest-modules/mailer';
-import config from './config';
+import config from './config/index';
 import { StatusMonitorModule } from 'nestjs-status-monitor';
 import { AuthModule } from './modules/auth/auth.module';
 import { APP_FILTER, APP_GUARD } from '@nestjs/core';
 // import { RoleAuthGuard } from '.common/guards/role-auth.guard';
 import { ScheduleModule } from '@nestjs/schedule';
-import { TasksModule } from './tasks/tasks.module';
-import { AudioModule } from './audio/audio.module';
-import { AlbumModule } from './album/album.module';
+import { TasksModule } from './common/tasks/tasks.module';
+import { AudioModule } from './modules/audio/audio.module';
+import { AlbumModule } from './modules/user/album/album.module';
 
 @Module({
   imports: [
