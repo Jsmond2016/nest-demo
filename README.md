@@ -521,6 +521,7 @@ async createMany(users: User[]) {
 - [typeorm 中文文档](https://typeorm.biunav.com/zh/#%E5%9C%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E6%9B%B4%E6%96%B0)
 - [doc-typeorm](https://docs.nestjs.cn/8/firststeps)
 - [写给前端的 Nest.js 教程——10分钟上手后端接口开发](https://juejin.cn/post/6885751452015263758)
+- [做了一个Nest.js上手项目，很丑，但适合练手和收藏](https://juejin.cn/post/6999079863487299597)
 
 **视频**
 
