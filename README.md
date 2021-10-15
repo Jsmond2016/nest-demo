@@ -538,6 +538,6 @@ async createMany(users: User[]) {
 - [基于Vue.js,Nest.js的前后端分离Blog|Based on Vue.js, Nest.js Separation | Blog](https://github.com/Dwsy/Blog)
 - [HeyiMaster/nest-starter](https://github.com/HeyiMaster/nest-starter)
 - [nest starter project](https://github.com/HeyiMaster/nest-starter)
-- [Midway-GraphQL-Starter midway](https://github.com/linbudu599/Midway-GraphQL-Starter midway)  和 nest 是有很多相似之处的，可以看看这个项目模板
+- [Midway-GraphQL-Starter midway](https://github.com/linbudu599/Midway-GraphQL-Starter)  midway和 nest 是有很多相似之处的，可以看看这个项目模板
 - [阿童木聊天室](https://github.com/genaller/genal-chat) 阿童木聊天室 nestjs+vue全栈聊天室 前后端分离 typescript一把梭
 - [Staart API](https://github.com/staart/api) a Node.js backend starter for SaaS startups written in TypeScript
