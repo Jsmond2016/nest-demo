@@ -534,7 +534,7 @@ async createMany(users: User[]) {
 - [nest集成swagger](https://blog.csdn.net/weixin_44828005/article/details/116136244)
 
 **项目参考**
-
+- [nest + nuxt.js 的全栈项目](https://github.com/givebest/node-nest-vue-nuxt-cms)
 - [基于Vue.js,Nest.js的前后端分离Blog|Based on Vue.js, Nest.js Separation | Blog](https://github.com/Dwsy/Blog)
 - [HeyiMaster/nest-starter](https://github.com/HeyiMaster/nest-starter)
 - [nest starter project](https://github.com/HeyiMaster/nest-starter)
