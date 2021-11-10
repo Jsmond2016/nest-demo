@@ -521,6 +521,7 @@ async createMany(users: User[]) {
 - [typeorm 中文文档](https://typeorm.biunav.com/zh/#%E5%9C%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E6%9B%B4%E6%96%B0)
 - [doc-typeorm](https://docs.nestjs.cn/8/firststeps)
 - [写给前端的 Nest.js 教程——10分钟上手后端接口开发](https://juejin.cn/post/6885751452015263758)
+- [NestJS 实战教程](https://juejin.cn/collection/6845244185432293389)
 
 **视频**
 
@@ -534,6 +535,8 @@ async createMany(users: User[]) {
 
 **项目参考**
 
+- [nest-todo](https://github.com/haixiangyan/nest-todo) 使用 React.js + Nest.js 实现一个简单的 Todo App。
+- [car-assembly](https://github.com/Lewage59/car-assembly) 基于Vue3.0+Nestjs搭建的汽车组装演示系统
 - [基于Vue.js,Nest.js的前后端分离Blog|Based on Vue.js, Nest.js Separation | Blog](https://github.com/Dwsy/Blog)
 - [HeyiMaster/nest-starter](https://github.com/HeyiMaster/nest-starter)
 - [nest starter project](https://github.com/HeyiMaster/nest-starter)
