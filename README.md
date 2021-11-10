@@ -522,6 +522,7 @@ async createMany(users: User[]) {
 - [doc-typeorm](https://docs.nestjs.cn/8/firststeps)
 - [写给前端的 Nest.js 教程——10分钟上手后端接口开发](https://juejin.cn/post/6885751452015263758)
 - [NestJS 实战教程](https://juejin.cn/collection/6845244185432293389)
+- [做了一个Nest.js上手项目，很丑，但适合练手和收藏](https://juejin.cn/post/6999079863487299597)
 
 **视频**
 
@@ -537,9 +538,11 @@ async createMany(users: User[]) {
 
 - [nest-todo](https://github.com/haixiangyan/nest-todo) 使用 React.js + Nest.js 实现一个简单的 Todo App。
 - [car-assembly](https://github.com/Lewage59/car-assembly) 基于Vue3.0+Nestjs搭建的汽车组装演示系统
+- [基于 vue-cli / vite2.x + vue3.x + antd-design-vue2.x + typescript4.x 的后台管理系统模板](https://github.com/buqiyuan/vue3-antd-admin) 可以关注里面的 nest 后端实现
+- [nest + nuxt.js 的全栈项目](https://github.com/givebest/node-nest-vue-nuxt-cms)
 - [基于Vue.js,Nest.js的前后端分离Blog|Based on Vue.js, Nest.js Separation | Blog](https://github.com/Dwsy/Blog)
 - [HeyiMaster/nest-starter](https://github.com/HeyiMaster/nest-starter)
 - [nest starter project](https://github.com/HeyiMaster/nest-starter)
-- [Midway-GraphQL-Starter midway](https://github.com/linbudu599/Midway-GraphQL-Starter midway)  和 nest 是有很多相似之处的，可以看看这个项目模板
+- [Midway-GraphQL-Starter midway](https://github.com/linbudu599/Midway-GraphQL-Starter)  midway和 nest 是有很多相似之处的，可以看看这个项目模板
 - [阿童木聊天室](https://github.com/genaller/genal-chat) 阿童木聊天室 nestjs+vue全栈聊天室 前后端分离 typescript一把梭
 - [Staart API](https://github.com/staart/api) a Node.js backend starter for SaaS startups written in TypeScript
