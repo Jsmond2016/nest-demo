@@ -57,7 +57,7 @@ export class UserController {
   @ApiBody({ type: UpdateUserDto, description: '所有参数必传' })
   @ApiResponse({
     status: 200,
-    description: '用户创建成功',
+    description: '用户更新成功',
     type: UpdateUserDto,
   })
   @Put('/update')

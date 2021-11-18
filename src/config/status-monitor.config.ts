@@ -1,4 +1,3 @@
-
 const statusMonitorConfig = {
   title: 'NestJS Status', // Default title
   path: '/status',
