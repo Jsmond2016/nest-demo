@@ -10,12 +10,12 @@ import { AlbumService } from './album.service';
       imports: [ConfigModule],
       useFactory: (config: ConfigService) => {
         console.log('config.get ==>', config);
-        return config.get('file')
+        return config.get('file');
       },
       inject: [ConfigService],
     }),
   ],
   controllers: [AlbumController],
-  providers: [AlbumService, ConfigService ],
+  providers: [AlbumService, ConfigService],
 })
 export class AlbumModule {}

@@ -8,7 +8,11 @@ import {
   UploadedFiles,
 } from '@nestjs/common';
 import { Response } from 'express';
-import { AnyFilesInterceptor, FileFieldsInterceptor, FilesInterceptor } from '@nestjs/platform-express';
+import {
+  AnyFilesInterceptor,
+  FileFieldsInterceptor,
+  FilesInterceptor,
+} from '@nestjs/platform-express';
 import { AlbumService } from './album.service';
 
 @Controller('album')
@@ -27,10 +31,7 @@ export class AlbumController {
   async downloadAll(@Res() res: Response) {
     const { filename, tarStream } = await this.albumService.downloadAll();
     res.setHeader('Content-Type', 'application/octet-stream');
-    res.setHeader(
-      'Content-Disposition',
-      `attachment; filename=${filename}`,
-    );
+    res.setHeader('Content-Disposition', `attachment; filename=${filename}`);
     tarStream.pipe(res);
   }
 }

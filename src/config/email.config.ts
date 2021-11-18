@@ -15,4 +15,4 @@ const emailConfig = {
   },
 };
 
-export default emailConfig
+export default emailConfig;

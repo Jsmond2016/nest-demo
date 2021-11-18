@@ -45,7 +45,7 @@ import { AlbumModule } from './modules/user/album/album.module';
   controllers: [AppController],
   providers: [
     AppService,
-    ConfigService
+    ConfigService,
     // {
     //   provide: APP_GUARD,
     //   useClass: RoleAuthGuard,
