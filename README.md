@@ -4,7 +4,7 @@
 
 - [Nodejs必学框架 | Nest企业级项目构建与开发实战](https://www.bilibili.com/video/BV1bQ4y1A77L)
 - [Exemplary real world backend API built with NestJS + TypeORM / Prisma](https://github.com/lujakob/nestjs-realworld-example-app)，对应 [翻译](https://cnodejs.org/topic/60e669d4ba74606a00862e23)
-
+- [zhufeng-nestjs-文档](https://gitee.com/jsmond/zhufeng-nestjs)
 
 ## 项目计划
 
