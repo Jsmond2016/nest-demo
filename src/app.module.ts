@@ -4,7 +4,6 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UserModule } from './modules/user/user.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Connection } from 'typeorm';
 import { HobbyModule } from './modules/hobby/hobby.module';
 import { LoggerMiddleware } from './common/middleware/logger.middleware';
 import { EmailModule } from './modules/email/email.module';
@@ -18,13 +17,23 @@ import { ScheduleModule } from '@nestjs/schedule';
 import { TasksModule } from './common/tasks/tasks.module';
 import { AudioModule } from './modules/audio/audio.module';
 import { AlbumModule } from './modules/user/album/album.module';
+import { RoleAuthGuard } from './common/guards/role-auth.guard';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
       load: [config],
     }),
-    TypeOrmModule.forRoot(),
+    TypeOrmModule.forRoot({
+      type: 'mysql',
+      host: 'localhost',
+      port: 3306,
+      username: 'root',
+      password: '123456',
+      database: 'nest_test',
+      entities: ["dist/**/*.entity{.ts,.js}"],
+      synchronize: true,
+    }),
     MailerModule.forRootAsync({
       imports: [ConfigModule],
       useFactory: (config: ConfigService) => {
@@ -32,7 +41,7 @@ import { AlbumModule } from './modules/user/album/album.module';
       },
       inject: [ConfigService],
     }),
-    StatusMonitorModule.forRoot(config().statusMonitorConfig),
+    // StatusMonitorModule.forRoot(config().statusMonitorConfig),
     // ScheduleModule.forRoot(),
     UserModule,
     HobbyModule,
@@ -46,14 +55,13 @@ import { AlbumModule } from './modules/user/album/album.module';
   providers: [
     AppService,
     ConfigService,
-    // {
-    //   provide: APP_GUARD,
-    //   useClass: RoleAuthGuard,
-    // },
+    {
+      provide: APP_GUARD,
+      useClass: RoleAuthGuard,
+    },
   ],
 })
 export class AppModule implements NestModule {
-  constructor(private readonly connection: Connection) {}
 
   configure(consumer: MiddlewareConsumer) {
     consumer.apply(LoggerMiddleware).forRoutes('user');

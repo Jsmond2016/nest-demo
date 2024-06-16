@@ -11,7 +11,7 @@ export class HobbyService {
   ) {}
 
   async getOne(params) {
-    return this.hobbyRepository.findOne(params);
+    return this.hobbyRepository.findOne({ where: params });
   }
 
   async getList(params) {

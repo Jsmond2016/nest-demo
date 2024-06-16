@@ -5,13 +5,13 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "type": "pwa-node",
+      "type": "node",
       "request": "launch",
-      "name": "Launch Program",
+      "name": "Debugger-Nestjs",
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${file}",
+      "program": "${workspaceFolder}\\src\\main.ts",
       "preLaunchTask": "tsc: build - tsconfig.json",
       "outFiles": [
         "${workspaceFolder}/dist/**/*.js"

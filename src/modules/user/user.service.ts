@@ -46,7 +46,11 @@ export class UserService {
   }
 
   getOne(id: number): Promise<User> {
-    return this.usersRepository.findOne(id, { relations: ['hobby'] });
+    return this.usersRepository.findOne( { where: {id}, relations: ['hobby'] });
+  }
+
+  find(userName: string): Promise<User> {
+    return this.usersRepository.findOne( { where: { name: userName } });
   }
 
   async delete(id: number | number[]): Promise<void> {

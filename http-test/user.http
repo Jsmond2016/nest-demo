@@ -20,7 +20,7 @@ content-type: application/json
 GET http://localhost:3000/user/get-by-id?id=1&user=user
 ### 角色是 role，不能访问
 GET http://localhost:3000/user/get-by-id?id=1&user=role
-### 
+###  不需要权限
 GET http://localhost:3000/user/get-list?pageIndex=1&pageSize=20
 
 
